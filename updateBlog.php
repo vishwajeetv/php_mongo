@@ -1,9 +1,6 @@
 <?php
 
-
-$mongo = new Mongo();
-
-$database = $mongo->learningmongo;
+include('dbconnection.php');
 
 $blog  = $database->blog;
 
@@ -19,8 +16,6 @@ if(isset($_POST['title']))
         "post" => $inputBlogPost
     ));
 }
-
-
 
 $blogs = $blog->find();
 
@@ -46,7 +41,8 @@ $blogs = $blog->find();
                     <div class="news">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                <h2 class="panel-title"><?php echo $blogArticle['title'];?></h2>
+                                <h2 class="panel-title">
+                                    <?php echo $blogArticle['title'];?></h2>
                             </div>
                             <div class="panel-body">
                                 <?php echo $blogArticle['post'];?>

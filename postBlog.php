@@ -1,9 +1,6 @@
 <?php
 
-
-$mongo = new Mongo();
-
-$database = $mongo->learningmongo;
+include('dbconnection.php');
 
 $blog  = $database->blog;
 
